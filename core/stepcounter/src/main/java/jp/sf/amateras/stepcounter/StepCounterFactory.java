@@ -145,7 +145,7 @@ public class StepCounterFactory {
 			// VBScript用カウンタを作成
 			return createVBCounter("vbs");
 
-		} else if(fileName.endsWith(".bas") || fileName.endsWith(".frm") || fileName.endsWith(".cls")){
+		} else if(fileName.endsWith(".bas") || fileName.endsWith(".frm") /*|| fileName.endsWith(".cls") : cls は Sales force用に利用*/){
 			// VB用カウンタを作成
 			return createVBCounter("VB");
 
@@ -323,6 +323,18 @@ public class StepCounterFactory {
 		} else if(fileName.endsWith(".groovy")){
 			// Groovy用カウンタを作成
 			return createJavaCounter("Groovy");
+
+		} else if(fileName.endsWith(".cls")){
+            // Sales force 用カウンタを作成
+            return createJavaCounter("Apex Class");
+
+        } else if(fileName.endsWith(".trigger")){
+            // Sales force 用カウンタを作成
+            return createJavaCounter("Apex Trigger");
+
+        } else if(fileName.endsWith(".pages")){
+            // Sales force 用カウンタを作成
+            return createXMLCounter("VFPages");
 
 		} else {
 			return null;
