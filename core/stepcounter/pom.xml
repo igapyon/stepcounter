@@ -1,14 +1,13 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>jp.sf.amateras.stepcounter</groupId>
+  <!-- <groupId>jp.sf.amateras.stepcounter</groupId> -->
+  <groupId>jp.igapyon.amateras.stepcounter</groupId>
   <artifactId>stepcounter</artifactId>
   <packaging>jar</packaging>
-  <version>3.0.4</version>
+  <version>3.0.4.1-SNAPSHOT</version>
   <name>StepCounter</name>
-  <url></url>
-  <description>
-  </description>
+  <url>https://github.com/igapyon/stepcounter</url>
+  <description>Amateras Stepcounter is a step counter supporting various programming languages. This distribution contains small change to support SF related extension.</description>
   <inceptionYear>2012</inceptionYear>
   <licenses>
     <license>
@@ -29,7 +28,25 @@
       <timezone>+9</timezone>
     </developer>
   </developers>
+  <contributors>
+    <contributor>
+      <name>Toshiki Iga</name>
+      <email>igapyon@gmail.com</email>
+      <url>http://www.igapyon.jp/</url>
+      <roles>
+        <role>developer</role>
+      </roles>
+      <timezone>-9</timezone>
+    </contributor>
+  </contributors>
 
+  <!-- for sonatype release. -->
+  <scm>
+    <url>https://github.com/igapyon/stepcounter</url>
+    <connection>scm:git:https://github.com/igapyon/stepcounter.git</connection>
+    <developerConnection>scm:git:https://github.com/igapyon/stepcounter.git</developerConnection>
+    <tag>stepcounter-3.0.4</tag>
+  </scm>
   <repositories>
     <repository>
       <id>amateras</id>
@@ -162,6 +179,35 @@
           </execution>
         </executions>
       </plugin>
+
+      <!-- gpg -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-gpg-plugin</artifactId>
+        <version>1.6</version>
+        <executions>
+          <execution>
+            <id>sign-artifacts</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>sign</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- for sonatype -->
+      <plugin>
+        <groupId>org.sonatype.plugins</groupId>
+        <artifactId>nexus-staging-maven-plugin</artifactId>
+        <version>1.6.7</version>
+        <extensions>true</extensions>
+        <configuration>
+          <serverId>ossrh</serverId>
+          <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+          <autoReleaseAfterClose>true</autoReleaseAfterClose>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
 
@@ -207,18 +253,15 @@
   </reporting>
 
   <distributionManagement>
+    <!-- for sonatype release. -->
     <repository>
-      <id>sourceforge.jp</id>
-      <url>scp://shell.sourceforge.jp/home/groups/a/am/amateras/htdocs/mvn/</url>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
     </repository>
     <snapshotRepository>
-      <id>sourceforge.jp</id>
-      <url>scp://shell.sourceforge.jp/home/groups/a/am/amateras/htdocs/mvn-snapshot/</url>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
     </snapshotRepository>
-    <site>
-      <id>sourceforge.jp</id>
-      <url>scp://shell.sourceforge.jp/home/groups/a/am/amateras/htdocs/site/stepcounter/</url>
-    </site>
   </distributionManagement>
 
 </project>
