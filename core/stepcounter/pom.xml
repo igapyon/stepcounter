@@ -4,7 +4,7 @@
   <groupId>jp.igapyon.amateras.stepcounter</groupId>
   <artifactId>stepcounter</artifactId>
   <packaging>jar</packaging>
-  <version>3.0.4.5-SNAPSHOT</version>
+  <version>3.0.4.5</version>
   <name>StepCounter</name>
   <url>https://github.com/igapyon/stepcounter</url>
   <description>Amateras Stepcounter is a step counter supporting various programming languages. This distribution contains small change to support SF related extension.</description>
