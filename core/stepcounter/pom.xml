@@ -27,18 +27,16 @@
       <url>http://d.hatena.ne.jp/takezoe/</url>
       <timezone>+9</timezone>
     </developer>
-  </developers>
-  <contributors>
-    <contributor>
+    <developer>
       <name>Toshiki Iga</name>
       <email>igapyon@gmail.com</email>
       <url>http://www.igapyon.jp/</url>
       <roles>
         <role>developer</role>
       </roles>
-      <timezone>-9</timezone>
-    </contributor>
-  </contributors>
+      <timezone>+9</timezone>
+    </developer>
+  </developers>
 
   <!-- for sonatype release. -->
   <scm>

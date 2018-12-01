@@ -31,7 +31,7 @@ public class DefaultFormatter implements ResultFormatter {
 			// 未対応のカウント結果をフォーマット
 			if(result.getFileType()==null){
 				sb.append(fillOrCut(result.getFileName(), maxFileLength));
-				sb.append("未対応");
+				sb.append("Not Supported");
 				sb.append("\n");
 			// 正常にカウントされた結果をフォーマット
 			} else {

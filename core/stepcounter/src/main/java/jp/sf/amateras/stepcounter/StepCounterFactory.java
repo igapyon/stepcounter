@@ -206,6 +206,10 @@ public class StepCounterFactory {
 			// プロパティファイル用カウンタを作成
 			return createShellCounter("Properties");
 
+		} else if(fileName.endsWith("-meta.xml")) {
+            // Sales force 用カウンタを作成
+			return createXMLCounter("Meta XML");
+
 		} else if(fileName.endsWith(".xml") || fileName.endsWith(".dicon")) {
 			// XML用カウンタを作成
 			return createXMLCounter("XML");
@@ -348,9 +352,33 @@ public class StepCounterFactory {
             // Sales force 用カウンタを作成
             return createJavaCounter("Apex Trigger");
 
-        } else if(fileName.endsWith(".pages")){
+        } else if(fileName.endsWith(".pages") || fileName.endsWith(".page")){
             // Sales force 用カウンタを作成
             return createXMLCounter("VFPages");
+
+        } else if(fileName.endsWith(".component")){
+            // Sales force 用カウンタを作成
+            return createXMLCounter("Component");
+
+        } else if(fileName.endsWith(".object")){
+            // Sales force 用カウンタを作成
+            return createXMLCounter("Object");
+
+        } else if(fileName.endsWith(".report")){
+            // Sales force 用カウンタを作成
+            return createXMLCounter("Report");
+
+        } else if(fileName.endsWith(".workflow")){
+            // Sales force 用カウンタを作成
+            return createXMLCounter("Workflow");
+
+        } else if(fileName.endsWith(".role")){
+            // Sales force 用カウンタを作成
+            return createXMLCounter("Role");
+
+        } else if(fileName.endsWith(".group")){
+            // Sales force 用カウンタを作成
+            return createXMLCounter("Group");
 
 		} else {
 			return null;

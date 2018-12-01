@@ -24,7 +24,7 @@ public class CSVFormatter implements ResultFormatter {
 			if(result.getFileType()==null){
 				sb.append(result.getFileName());
 				sb.append(",");
-				sb.append("未対応");
+				sb.append("Not Supported");
 				sb.append(",");
 				sb.append(",");
 				sb.append(",");

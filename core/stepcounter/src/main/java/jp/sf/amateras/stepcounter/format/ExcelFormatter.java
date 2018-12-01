@@ -68,7 +68,7 @@ public class ExcelFormatter implements ResultFormatter {
 					r.setCategory("");
 				}
 				if (r.getFileType() == null) {
-					r.setFileType("未対応");
+					r.setFileType("Not Supported");
 				}
 			}
 
